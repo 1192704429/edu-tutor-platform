@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.MessageDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.MessageDTO" resultType="com.education.sdk.dto.MessageDTO">
+        select
+        message.*,
+        student.nick_name as stu_name,
+        student.avatar as stu_img,
+        teachers.name as tea_name,
+        teachers.head_img as tea_img
+        from message message
+        left join users student on message.send_user_id = student.id
+		left join teacher teachers on message.accept_user_id = teachers.id
+        <where>
+            <if test="id != null and id != ''">and message.id = #{id}</if>
+            <if test="sendUserId != null and sendUserId != ''">and message.send_user_id = #{sendUserId}</if>
+            <if test="acceptUserId != null and acceptUserId != ''">and message.accept_user_id = #{acceptUserId}</if>
+            <if test="createTime != null and createTime != ''">and message.create_time = #{createTime}</if>
+            <if test="stuName != null and stuName != ''">and student.nick_name like concat('%',#{stuName},'%')</if>
+            <if test="teaName != null and teaName != ''">and teachers.name like concat('%',#{teaName},'%')</if>
+        </where>
+        order by id desc
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.MessageDTO" resultType="java.lang.Integer">
+        select count(*) from message message
+        left join users student on message.send_user_id = student.id
+		left join teacher teachers on message.accept_user_id = teachers.id
+        <where>
+            <if test="id != null and id != ''">and message.id = #{id}</if>
+            <if test="sendUserId != null and sendUserId != ''">and message.send_user_id = #{sendUserId}</if>
+            <if test="acceptUserId != null and acceptUserId != ''">and message.accept_user_id = #{acceptUserId}</if>
+            <if test="createTime != null and createTime != ''">and message.create_time = #{createTime}</if>
+            <if test="stuName != null and stuName != ''">and student.nick_name like concat('%',#{stuName},'%')</if>
+            <if test="teaName != null and teaName != ''">and teachers.name like concat('%',#{teaName},'%')</if>
+        </where>
+    </select>
+
+</mapper>

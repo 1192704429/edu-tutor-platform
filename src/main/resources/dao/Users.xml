@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.UsersDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.UsersDTO" resultType="com.education.sdk.dto.UsersDTO">
+        select
+        users.*
+        from users users
+        <where>
+            <if test="id != null and id != ''">and users.id = #{id}</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and users.avatar = #{avatar}</if>
+            <if test="username != null and username != ''">and users.username = #{username}</if>
+            <if test="password != null and password != ''">and users.password = #{password}</if>
+            <if test="sex != null and sex != ''">and users.sex = #{sex}</if>
+            <if test="createTime != null and createTime != ''">and users.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.UsersDTO" resultType="java.lang.Integer">
+        select count(*) from users users
+        <where>
+            <if test="id != null and id != ''">and users.id = #{id}</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and users.avatar = #{avatar}</if>
+            <if test="username != null and username != ''">and users.username = #{username}</if>
+            <if test="password != null and password != ''">and users.password = #{password}</if>
+            <if test="sex != null and sex != ''">and users.sex = #{sex}</if>
+            <if test="createTime != null and createTime != ''">and users.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

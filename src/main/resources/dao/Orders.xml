@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.OrdersDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.OrdersDTO" resultType="com.education.sdk.dto.OrdersDTO">
+        select
+        orders.*,
+        subject.subject_name,
+        users.nick_name,
+        users.avatar,
+        teacher.name,
+        types.type_name,
+        teacher.head_img
+        from orders orders
+        left join subject subject on orders.subject_id = subject.id
+		left join types types on orders.type_id = types.id
+		left join users users on orders.user_id = users.id
+		left join teacher teacher on orders.teacher_id = teacher.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="teacherId != null and teacherId != ''">and orders.teacher_id = #{teacherId}</if>
+            <if test="studentTime != null and studentTime != ''">and orders.student_time = #{studentTime}</if>
+            <if test="address != null and address != ''">and orders.address = #{address}</if>
+            <if test="subjectId != null and subjectId != ''">and orders.subject_id = #{subjectId}</if>
+            <if test="status != null and status != ''">and orders.status = #{status}</if>
+            <if test="remark != null and remark != ''">and orders.remark = #{remark}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="typeId != null and typeId != ''">and orders.type_id = #{typeId}</if>
+            <if test="subjectName != null and subjectName != ''">and subject.subject_name like concat('%',#{subjectName},'%')</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and users.avatar = #{avatar}</if>
+            <if test="name != null and name != ''">and teacher.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and teacher.head_img = #{headImg}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.OrdersDTO" resultType="java.lang.Integer">
+        select count(*) from orders orders
+        left join subject subject on orders.subject_id = subject.id
+		left join types types on orders.type_id = types.id
+		left join users users on orders.user_id = users.id
+		left join teacher teacher on orders.teacher_id = teacher.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="teacherId != null and teacherId != ''">and orders.teacher_id = #{teacherId}</if>
+            <if test="studentTime != null and studentTime != ''">and orders.student_time = #{studentTime}</if>
+            <if test="address != null and address != ''">and orders.address = #{address}</if>
+            <if test="subjectId != null and subjectId != ''">and orders.subject_id = #{subjectId}</if>
+            <if test="status != null and status != ''">and orders.status = #{status}</if>
+            <if test="remark != null and remark != ''">and orders.remark = #{remark}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="typeId != null and typeId != ''">and orders.type_id = #{typeId}</if>
+            <if test="subjectName != null and subjectName != ''">and subject.subject_name like concat('%',#{subjectName},'%')</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="avatar != null and avatar != ''">and users.avatar = #{avatar}</if>
+            <if test="name != null and name != ''">and teacher.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and teacher.head_img = #{headImg}</if>
+        </where>
+    </select>
+
+</mapper>

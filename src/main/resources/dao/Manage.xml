@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.ManageDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.ManageDTO" resultType="com.education.sdk.dto.ManageDTO">
+        select
+        manage.*
+        from manage manage
+        <where>
+            <if test="id != null and id != ''">and manage.id = #{id}</if>
+            <if test="userName != null and userName != ''">and manage.user_name = #{userName}</if>
+            <if test="passWord != null and passWord != ''">and manage.pass_word = #{passWord}</if>
+            <if test="photoImg != null and photoImg != ''">and manage.photo_img = #{photoImg}</if>
+            <if test="name != null and name != ''">and manage.name like concat('%',#{name},'%')</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.ManageDTO" resultType="java.lang.Integer">
+        select count(*) from manage manage
+        <where>
+            <if test="id != null and id != ''">and manage.id = #{id}</if>
+            <if test="userName != null and userName != ''">and manage.user_name = #{userName}</if>
+            <if test="passWord != null and passWord != ''">and manage.pass_word = #{passWord}</if>
+            <if test="photoImg != null and photoImg != ''">and manage.photo_img = #{photoImg}</if>
+            <if test="name != null and name != ''">and manage.name like concat('%',#{name},'%')</if>
+        </where>
+    </select>
+
+</mapper>

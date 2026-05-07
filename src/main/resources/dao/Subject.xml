@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.SubjectDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.SubjectDTO" resultType="com.education.sdk.dto.SubjectDTO">
+        select
+        subject.*
+        from subject subject
+        <where>
+            <if test="id != null and id != ''">and subject.id = #{id}</if>
+            <if test="subjectName != null and subjectName != ''">and subject.subject_name like concat('%',#{subjectName},'%')</if>
+            <if test="createTime != null and createTime != ''">and subject.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.SubjectDTO" resultType="java.lang.Integer">
+        select count(*) from subject subject
+        <where>
+            <if test="id != null and id != ''">and subject.id = #{id}</if>
+            <if test="subjectName != null and subjectName != ''">and subject.subject_name like concat('%',#{subjectName},'%')</if>
+            <if test="createTime != null and createTime != ''">and subject.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

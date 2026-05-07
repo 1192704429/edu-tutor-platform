@@ -1,0 +1,44 @@
+server:
+  port: 3001
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/20250227jiajiao?characterEncoding=UTF-8&useUnicode=true&useOldAliasMetadataBehavior=true&useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  mail:
+    host: smtp.qq.com #发送邮件服务器
+    username: 1192704429@qq.com #QQ邮箱
+    password: tlfjwbktetwdbada #客户端授权码
+    protocol: smtp #发送邮件协议
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465 #端口号465或587
+    properties.mail.display.sendmail: Javen #可以任意
+    properties.mail.display.sendname: Spring Boot Guide Email #可以任意
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    from: 1192704429@qq.com #与上面的username保持一致
+mybatis-plus:
+  #sql语句Xml扫描
+  mapper-locations: classpath:/dao/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.server.api.entity
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型 AUTO:"数据库ID自增",INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)",UUID:"全局唯一ID UUID";
+      id-type: AUTO
+    banner: false
+  #原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+new-tomcat:
+  folder: B:\\environment\\apache-tomcat-8.5.68\webapps\\jiajiao\\
+  host: http://localhost:8092/jiajiao/

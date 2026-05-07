@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.TeacherDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.TeacherDTO" resultType="com.education.sdk.dto.TeacherDTO">
+        select
+        teacher.*,
+        types.type_name
+        from teacher teacher
+        left join types types on teacher.type_id = types.id
+        left join teacher_subject  s on s.teacher_id = teacher.id
+        <where>
+            <if test="id != null and id != ''">and teacher.id = #{id}</if>
+            <if test="name != null and name != ''">and teacher.name like concat('%',#{name},'%')</if>
+            <if test="age != null and age != ''">and teacher.age = #{age}</if>
+            <if test="sex != null and sex != ''">and teacher.sex = #{sex}</if>
+            <if test="username != null and username != ''">and teacher.username = #{username}</if>
+            <if test="password != null and password != ''">and teacher.password = #{password}</if>
+            <if test="headImg != null and headImg != ''">and teacher.head_img = #{headImg}</if>
+            <if test="collegiate != null and collegiate != ''">and teacher.collegiate = #{collegiate}</if>
+            <if test="educational != null and educational != ''">and teacher.educational = #{educational}</if>
+            <if test="educationalImg != null and educationalImg != ''">and teacher.educational_img = #{educationalImg}</if>
+            <if test="info != null and info != ''">and teacher.info = #{info}</if>
+            <if test="status != null and status != ''">and teacher.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and teacher.create_time = #{createTime}</if>
+            <if test="email != null and email != ''">and teacher.email like concat('%',#{email},'%')</if>
+            <if test="typeId != null and typeId != ''">and teacher.type_id = #{typeId}</if>
+            <if test="typeName != null and typeName != ''">and types.type_name like concat('%',#{typeName},'%')</if>
+            <if test="ids != null and ids != ''">and s.subject_id in (${ids}) </if>
+        </where>
+        group by s.teacher_id
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.TeacherDTO" resultType="java.lang.Integer">
+        select count(DISTINCT teacher.id) from teacher teacher
+        left join types types on teacher.type_id = types.id
+        left join teacher_subject  s on s.teacher_id = teacher.id
+        <where>
+            <if test="id != null and id != ''">and teacher.id = #{id}</if>
+            <if test="name != null and name != ''">and teacher.name like concat('%',#{name},'%')</if>
+            <if test="age != null and age != ''">and teacher.age = #{age}</if>
+            <if test="sex != null and sex != ''">and teacher.sex = #{sex}</if>
+            <if test="username != null and username != ''">and teacher.username = #{username}</if>
+            <if test="password != null and password != ''">and teacher.password = #{password}</if>
+            <if test="headImg != null and headImg != ''">and teacher.head_img = #{headImg}</if>
+            <if test="collegiate != null and collegiate != ''">and teacher.collegiate = #{collegiate}</if>
+            <if test="educational != null and educational != ''">and teacher.educational = #{educational}</if>
+            <if test="educationalImg != null and educationalImg != ''">and teacher.educational_img = #{educationalImg}</if>
+            <if test="info != null and info != ''">and teacher.info = #{info}</if>
+            <if test="status != null and status != ''">and teacher.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and teacher.create_time = #{createTime}</if>
+            <if test="email != null and email != ''">and teacher.email like concat('%',#{email},'%')</if>
+            <if test="typeId != null and typeId != ''">and teacher.type_id = #{typeId}</if>
+            <if test="typeName != null and typeName != ''">and types.type_name like concat('%',#{typeName},'%')</if>
+            <if test="ids != null and ids != ''">and s.subject_id in (${ids}) </if>
+        </where>
+    </select>
+
+</mapper>

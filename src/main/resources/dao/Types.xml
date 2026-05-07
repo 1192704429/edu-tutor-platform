@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.TypesDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.TypesDTO" resultType="com.education.sdk.dto.TypesDTO">
+        select
+        types.*
+        from types types
+        <where>
+            <if test="id != null and id != ''">and types.id = #{id}</if>
+            <if test="typeName != null and typeName != ''">and types.type_name like concat('%',#{typeName},'%')</if>
+            <if test="createTime != null and createTime != ''">and types.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.TypesDTO" resultType="java.lang.Integer">
+        select count(*) from types types
+        <where>
+            <if test="id != null and id != ''">and types.id = #{id}</if>
+            <if test="typeName != null and typeName != ''">and types.type_name like concat('%',#{typeName},'%')</if>
+            <if test="createTime != null and createTime != ''">and types.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

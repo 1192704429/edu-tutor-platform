@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.CommentDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.CommentDTO" resultType="com.education.sdk.dto.CommentDTO">
+        select
+        comment.*,
+        teacher.name,
+        teacher.head_img,
+        users.nick_name,
+        users.avatar
+        from comment comment
+        left join teacher teacher on comment.teacher_id = teacher.id
+		left join users users on comment.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and comment.id = #{id}</if>
+            <if test="content != null and content != ''">and comment.content = #{content}</if>
+            <if test="orderId != null and orderId != ''">and comment.order_id = #{orderId}</if>
+            <if test="userId != null and userId != ''">and comment.user_id = #{userId}</if>
+            <if test="teacherId != null and teacherId != ''">and comment.teacher_id = #{teacherId}</if>
+            <if test="parentId != null and parentId != ''">and comment.parent_id = #{parentId}</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%') or teacher.name like concat('%',#{nickName},'%')</if>
+            <if test="orderIds != null">and comment.order_id in (${orderIds})</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.CommentDTO" resultType="java.lang.Integer">
+        select count(*) from comment comment
+        left join teacher teacher on comment.teacher_id = teacher.id
+        left join users users on comment.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and comment.id = #{id}</if>
+            <if test="content != null and content != ''">and comment.content = #{content}</if>
+            <if test="orderId != null and orderId != ''">and comment.order_id = #{orderId}</if>
+            <if test="userId != null and userId != ''">and comment.user_id = #{userId}</if>
+            <if test="teacherId != null and teacherId != ''">and comment.teacher_id = #{teacherId}</if>
+            <if test="parentId != null and parentId != ''">and comment.parent_id = #{parentId}</if>
+            <if test="nickName != null and nickName != ''">and users.nick_name like concat('%',#{nickName},'%') or teacher.name like concat('%',#{nickName},'%')</if>
+            <if test="orderIds != null">and comment.order_id in (${orderIds})</if>
+        </where>
+    </select>
+
+</mapper>

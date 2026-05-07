@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.education.sdk.dao.MessageInfoDao">
+
+    <select id="findList" parameterType="com.education.sdk.dto.MessageInfoDTO" resultType="com.education.sdk.dto.MessageInfoDTO">
+        select
+        messageInfo.*,
+        student.nick_name as stu_name,
+        student.avatar as stu_img,
+        teachers.name as tea_name,
+        teachers.head_img as tea_img
+        from message_info messageInfo
+        left join users student on messageInfo.send_user_id = student.id
+		left join teacher teachers on messageInfo.accept_user_id = teachers.id
+        <where>
+            <if test="id != null and id != ''">and messageInfo.id = #{id}</if>
+            <if test="info != null and info != ''">and messageInfo.info = #{info}</if>
+            <if test="messageId != null and messageId != ''">and messageInfo.message_id = #{messageId}</if>
+            <if test="position != null and position != ''">and messageInfo.position = #{position}</if>
+            <if test="sendUserId != null and sendUserId != ''">and messageInfo.send_user_id = #{sendUserId}</if>
+            <if test="acceptUserId != null and acceptUserId != ''">and messageInfo.accept_user_id = #{acceptUserId}</if>
+            <if test="createTime != null and createTime != ''">and messageInfo.create_time = #{createTime}</if>
+            <if test="stuName != null and stuName != ''">and student.nick_name like concat('%',#{stuName},'%')</if>
+            <if test="teaName != null and teaName != ''">and teachers.name like concat('%',#{teaName},'%')</if>
+        </where>
+        order by id asc
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.education.sdk.dto.MessageInfoDTO" resultType="java.lang.Integer">
+        select count(*) from message_info messageInfo
+        left join users student on messageInfo.send_user_id = student.id
+		left join teacher teachers on messageInfo.accept_user_id = teachers.id
+        <where>
+            <if test="id != null and id != ''">and messageInfo.id = #{id}</if>
+            <if test="info != null and info != ''">and messageInfo.info = #{info}</if>
+            <if test="messageId != null and messageId != ''">and messageInfo.message_id = #{messageId}</if>
+            <if test="position != null and position != ''">and messageInfo.position = #{position}</if>
+            <if test="sendUserId != null and sendUserId != ''">and messageInfo.send_user_id = #{sendUserId}</if>
+            <if test="acceptUserId != null and acceptUserId != ''">and messageInfo.accept_user_id = #{acceptUserId}</if>
+            <if test="createTime != null and createTime != ''">and messageInfo.create_time = #{createTime}</if>
+            <if test="stuName != null and stuName != ''">and student.nick_name like concat('%',#{stuName},'%')</if>
+            <if test="teaName != null and teaName != ''">and teachers.name like concat('%',#{teaName},'%')</if>
+        </where>
+    </select>
+
+</mapper>
