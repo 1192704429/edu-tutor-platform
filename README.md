@@ -19,7 +19,7 @@
 | 平台管理员 | 管理员端（电脑网页） |
 
 
-![功能模块图](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/azhou_promotion/img/module_structure/func_module_5e8d04189212427b809e9ac36e201f83.png)
+![功能模块图](docs/images/01-func-module.png)
 
 
 ## 三、技术栈说明
@@ -52,71 +52,71 @@
 
 登录页：输入账号密码，登录家教平台
 
-![登录页：输入账号密码，登录家教平台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/a97a85c7-be57-4859-8106-7bc6ba208997.png)
+![登录页：输入账号密码，登录家教平台](docs/images/02-deng-lu.png)
 
 注册页：填写信息完成家教平台新账号注册
 
-![注册页：填写信息完成家教平台新账号注册](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/bae9017b-72d7-4525-8949-afdd3ef1e4a9.png)
+![注册页：填写信息完成家教平台新账号注册](docs/images/03-zhu-ce.png)
 
 登录页：教师输入账号密码登录家教平台
 
-![登录页：教师输入账号密码登录家教平台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/35253e43-765c-4be2-89a4-0ea4c9a54b6d.png)
+![登录页：教师输入账号密码登录家教平台](docs/images/04-deng-lu.png)
 
 教师列表页：支持按条件筛选，查看平台家教老师信息
 
-![教师列表页：支持按条件筛选，查看平台家教老师信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/fa8e1157-2347-48a5-8b66-d2b4975fbcef.png)
+![教师列表页：支持按条件筛选，查看平台家教老师信息](docs/images/05-jiao-shi-lie-biao.png)
 
 详情页：展示家教老师详细信息，支持预约与咨询
 
-![详情页：展示家教老师详细信息，支持预约与咨询](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/8d6e16c4-baaa-4e35-8b6d-3d5ce8c6cba5.png)
+![详情页：展示家教老师详细信息，支持预约与咨询](docs/images/06-xiang-qing.png)
 
 预约订单发布页：用户填写预约家教老师的相关订单信息
 
-![预约订单发布页：用户填写预约家教老师的相关订单信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/4c2488e4-7e55-465c-8fa8-f4140d18c11d.png)
+![预约订单发布页：用户填写预约家教老师的相关订单信息](docs/images/07-yu-yue-ding-dan-fa-bu.png)
 
 订单管理页：查看个人的家教课程预约订单记录
 
-![订单管理页：查看个人的家教课程预约订单记录](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ef4926ad-efe4-4bad-8df9-6ec17529cca7.png)
+![订单管理页：查看个人的家教课程预约订单记录](docs/images/08-ding-dan-guan-li.png)
 
 订单管理页：查看家教预约订单的详细信息
 
-![订单管理页：查看家教预约订单的详细信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/b94891fa-d2ff-471d-858a-37734ee7bb65.png)
+![订单管理页：查看家教预约订单的详细信息](docs/images/09-ding-dan-guan-li.png)
 
 订单详情页：查看家教预约订单详情，支持评论和在线沟通
 
-![订单详情页：查看家教预约订单详情，支持评论和在线沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/1e838e87-8484-475b-8bc5-53ab52f67f79.png)
+![订单详情页：查看家教预约订单详情，支持评论和在线沟通](docs/images/10-ding-dan-xiang-qing.png)
 
 订单详情页：查看家教预约订单详情，可咨询取消与评论
 
-![订单详情页：查看家教预约订单详情，可咨询取消与评论](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/4d7d9e35-b2fb-467a-8966-a1c5115575da.png)
+![订单详情页：查看家教预约订单详情，可咨询取消与评论](docs/images/11-ding-dan-xiang-qing.png)
 
 个人中心页：展示个人功能入口，供用户操作个人相关业务
 
-![个人中心页：展示个人功能入口，供用户操作个人相关业务](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ca6c0217-1f95-4df2-86ea-08412d4831c3.png)
+![个人中心页：展示个人功能入口，供用户操作个人相关业务](docs/images/12-ge-ren-zhong-xin.png)
 
 个人中心页：展示个人信息，提供个人相关功能入口
 
-![个人中心页：展示个人信息，提供个人相关功能入口](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/7b72711b-f360-49d7-85c0-6e8440500641.png)
+![个人中心页：展示个人信息，提供个人相关功能入口](docs/images/13-ge-ren-zhong-xin.png)
 
 身份认证页：修改认证信息，提交教师身份认证申请
 
-![身份认证页：修改认证信息，提交教师身份认证申请](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/9ea75a9e-1c51-4673-897d-efe1b49cc3f6.png)
+![身份认证页：修改认证信息，提交教师身份认证申请](docs/images/14-shen-fen-ren-zheng.png)
 
 咨询列表页：展示在线咨询的会话列表
 
-![咨询列表页：展示在线咨询的会话列表](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/0744ccce-f59c-4903-8a50-b0a18d9b9f0a.png)
+![咨询列表页：展示在线咨询的会话列表](docs/images/15-zi-xun-lie-biao.png)
 
 在线咨询页：展示在线咨询页面，显示对接的咨询老师信息
 
-![在线咨询页：展示在线咨询页面，显示对接的咨询老师信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/e7338693-7df1-4275-8026-54d90cdaec9c.png)
+![在线咨询页：展示在线咨询页面，显示对接的咨询老师信息](docs/images/16-zai-xian-zi-xun.png)
 
 在线沟通页：家长与家教老师进行在线文字沟通
 
-![在线沟通页：家长与家教老师进行在线文字沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/a91dc4bf-315a-4edc-8793-b2af3dd6a6e0.png)
+![在线沟通页：家长与家教老师进行在线文字沟通](docs/images/17-zai-xian-gou-tong.png)
 
 在线沟通页：家长和家教老师进行在线文字沟通
 
-![在线沟通页：家长和家教老师进行在线文字沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ae988101-a1cf-4c04-84d0-14a7fd089952.png)
+![在线沟通页：家长和家教老师进行在线文字沟通](docs/images/18-zai-xian-gou-tong.png)
 
 
 ###### 老师端（移动端小程序）
@@ -136,71 +136,71 @@
 
 登录页：输入账号密码，登录家教平台
 
-![登录页：输入账号密码，登录家教平台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/a97a85c7-be57-4859-8106-7bc6ba208997.png)
+![登录页：输入账号密码，登录家教平台](docs/images/02-deng-lu.png)
 
 注册页：填写信息完成家教平台新账号注册
 
-![注册页：填写信息完成家教平台新账号注册](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/bae9017b-72d7-4525-8949-afdd3ef1e4a9.png)
+![注册页：填写信息完成家教平台新账号注册](docs/images/03-zhu-ce.png)
 
 登录页：教师输入账号密码登录家教平台
 
-![登录页：教师输入账号密码登录家教平台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/35253e43-765c-4be2-89a4-0ea4c9a54b6d.png)
+![登录页：教师输入账号密码登录家教平台](docs/images/04-deng-lu.png)
 
 教师列表页：支持按条件筛选，查看平台家教老师信息
 
-![教师列表页：支持按条件筛选，查看平台家教老师信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/fa8e1157-2347-48a5-8b66-d2b4975fbcef.png)
+![教师列表页：支持按条件筛选，查看平台家教老师信息](docs/images/05-jiao-shi-lie-biao.png)
 
 详情页：展示家教老师详细信息，支持预约与咨询
 
-![详情页：展示家教老师详细信息，支持预约与咨询](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/8d6e16c4-baaa-4e35-8b6d-3d5ce8c6cba5.png)
+![详情页：展示家教老师详细信息，支持预约与咨询](docs/images/06-xiang-qing.png)
 
 预约订单发布页：用户填写预约家教老师的相关订单信息
 
-![预约订单发布页：用户填写预约家教老师的相关订单信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/4c2488e4-7e55-465c-8fa8-f4140d18c11d.png)
+![预约订单发布页：用户填写预约家教老师的相关订单信息](docs/images/07-yu-yue-ding-dan-fa-bu.png)
 
 订单管理页：查看个人的家教课程预约订单记录
 
-![订单管理页：查看个人的家教课程预约订单记录](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ef4926ad-efe4-4bad-8df9-6ec17529cca7.png)
+![订单管理页：查看个人的家教课程预约订单记录](docs/images/08-ding-dan-guan-li.png)
 
 订单管理页：查看家教预约订单的详细信息
 
-![订单管理页：查看家教预约订单的详细信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/b94891fa-d2ff-471d-858a-37734ee7bb65.png)
+![订单管理页：查看家教预约订单的详细信息](docs/images/09-ding-dan-guan-li.png)
 
 订单详情页：查看家教预约订单详情，支持评论和在线沟通
 
-![订单详情页：查看家教预约订单详情，支持评论和在线沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/1e838e87-8484-475b-8bc5-53ab52f67f79.png)
+![订单详情页：查看家教预约订单详情，支持评论和在线沟通](docs/images/10-ding-dan-xiang-qing.png)
 
 订单详情页：查看家教预约订单详情，可咨询取消与评论
 
-![订单详情页：查看家教预约订单详情，可咨询取消与评论](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/4d7d9e35-b2fb-467a-8966-a1c5115575da.png)
+![订单详情页：查看家教预约订单详情，可咨询取消与评论](docs/images/11-ding-dan-xiang-qing.png)
 
 个人中心页：展示个人功能入口，供用户操作个人相关业务
 
-![个人中心页：展示个人功能入口，供用户操作个人相关业务](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ca6c0217-1f95-4df2-86ea-08412d4831c3.png)
+![个人中心页：展示个人功能入口，供用户操作个人相关业务](docs/images/12-ge-ren-zhong-xin.png)
 
 个人中心页：展示个人信息，提供个人相关功能入口
 
-![个人中心页：展示个人信息，提供个人相关功能入口](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/7b72711b-f360-49d7-85c0-6e8440500641.png)
+![个人中心页：展示个人信息，提供个人相关功能入口](docs/images/13-ge-ren-zhong-xin.png)
 
 身份认证页：修改认证信息，提交教师身份认证申请
 
-![身份认证页：修改认证信息，提交教师身份认证申请](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/9ea75a9e-1c51-4673-897d-efe1b49cc3f6.png)
+![身份认证页：修改认证信息，提交教师身份认证申请](docs/images/14-shen-fen-ren-zheng.png)
 
 咨询列表页：展示在线咨询的会话列表
 
-![咨询列表页：展示在线咨询的会话列表](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/0744ccce-f59c-4903-8a50-b0a18d9b9f0a.png)
+![咨询列表页：展示在线咨询的会话列表](docs/images/15-zi-xun-lie-biao.png)
 
 在线咨询页：展示在线咨询页面，显示对接的咨询老师信息
 
-![在线咨询页：展示在线咨询页面，显示对接的咨询老师信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/e7338693-7df1-4275-8026-54d90cdaec9c.png)
+![在线咨询页：展示在线咨询页面，显示对接的咨询老师信息](docs/images/16-zai-xian-zi-xun.png)
 
 在线沟通页：家长与家教老师进行在线文字沟通
 
-![在线沟通页：家长与家教老师进行在线文字沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/a91dc4bf-315a-4edc-8793-b2af3dd6a6e0.png)
+![在线沟通页：家长与家教老师进行在线文字沟通](docs/images/17-zai-xian-gou-tong.png)
 
 在线沟通页：家长和家教老师进行在线文字沟通
 
-![在线沟通页：家长和家教老师进行在线文字沟通](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/ae988101-a1cf-4c04-84d0-14a7fd089952.png)
+![在线沟通页：家长和家教老师进行在线文字沟通](docs/images/18-zai-xian-gou-tong.png)
 
 
 ###### 管理员端（电脑网页）
@@ -221,27 +221,27 @@
 
 登录页：管理员输入账号密码登录家教管理后台
 
-![登录页：管理员输入账号密码登录家教管理后台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/9776620f-4695-4af4-8fa3-6766504ad6c0.png)
+![登录页：管理员输入账号密码登录家教管理后台](docs/images/19-deng-lu.png)
 
 教师管理页：展示教师列表，对家教老师进行审核管理
 
-![教师管理页：展示教师列表，对家教老师进行审核管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/9edb4d8b-9076-45d5-8e03-11e2a389e7d7.png)
+![教师管理页：展示教师列表，对家教老师进行审核管理](docs/images/20-jiao-shi-guan-li.png)
 
 订单管理页：查看并管理平台所有家教预约订单
 
-![订单管理页：查看并管理平台所有家教预约订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/c7e8792c-2d21-4678-898e-d6bad30b44e1.png)
+![订单管理页：查看并管理平台所有家教预约订单](docs/images/21-ding-dan-guan-li.png)
 
 评论管理页：展示用户评论，对不当评论进行管理操作
 
-![评论管理页：展示用户评论，对不当评论进行管理操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/56a580d2-154e-4aeb-8a6f-8fc1e44038bb.png)
+![评论管理页：展示用户评论，对不当评论进行管理操作](docs/images/22-ping-lun-guan-li.png)
 
 学科管理页：对家教平台的学科信息进行管理
 
-![学科管理页：对家教平台的学科信息进行管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/b4c67f93-ef5d-451f-8256-0079405d25ac.png)
+![学科管理页：对家教平台的学科信息进行管理](docs/images/23-xue-ke-guan-li.png)
 
 服务方式管理页：管理家教服务方式，支持增删改操作
 
-![服务方式管理页：管理家教服务方式，支持增删改操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-07/41e2838f-b099-42e7-8c58-782dec27587b.png)
+![服务方式管理页：管理家教服务方式，支持增删改操作](docs/images/24-fu-wu-fang-shi-guan-li.png)
 
 
 ## 五、主要业务流程
